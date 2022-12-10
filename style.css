@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ccc;
+    line-height: 1.5;
+}
+
+.container {
+    font-family: 'Muli', sans-serif;
+    padding: 2rem;
+    max-width: calc(800px + 2vw);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+.content {
+    width: 100%;
+    padding: 2rem 1.5rem; 
+    background: #fff;
+    border: 1px solid #666;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.content h1 {
+    font-size: calc(1rem + 1.5vw);
+    margin-bottom: 2rem;
+}
+
+
+
+.faq-card {
+    border: 1px solid #666;
+    text-align: left;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    background: #eee;
+    transition: 0.1s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.faq-card.active {
+    box-shadow: 0 0 7px rgba(0,0,0,0.75);
+    background: transparent;
+}
+
+
+.faq-card.active::before, .faq-card.active::after {
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    font-size: 6rem;
+    opacity: 0.2;
+    /* z-index: 0; */
+
+}
+
+.faq-card.active::before {
+    top: 0rem;
+    left: 1rem;
+    color: rgb(52, 52, 221);
+}
+
+.faq-card.active::after {
+    top: -3rem;
+    left: -1rem;
+    color: rgb(53, 99, 72);
+    transform: rotateY(180deg)
+}
+
+.faq-card .faq-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 1.5rem;
+}
+
+.faq-card .faq-card-header .btn-div {
+    flex-basis: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+}
+
+.faq-card .faq-card-header button {
+    font-size: 1.1rem;
+    border: 0;
+    cursor: pointer;
+    transform: translateX(-0.35rem);
+}
+
+.faq-card.active .faq-card-header button {
+    background: #aaa;
+    color: #fff;
+    border-radius: 50%;
+    transform: none;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.faq-card .faq-card-header button .fa-xmark{
+    display: none;
+}
+.faq-card .faq-card-header button .fa-chevron-down{
+    display: block;
+
+}
+.faq-card.active .faq-card-header button .fa-chevron-down {
+    display: none;
+}
+.faq-card.active .faq-card-header button .fa-xmark {
+    display: block;
+}
+
+
+
+.faq-card .faq-card-text {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
+}
+.faq-card.active .faq-card-text {
+    display: block;
+}
+
+
+
